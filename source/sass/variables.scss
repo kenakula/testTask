@@ -10,9 +10,17 @@ $color-transparent:               rgba(255, 255, 255, 0);
 
 // Base
 
-$color-black:                     #0e0e0e;
+$color-black:                     $color-default-black;
 $color-white:                     #f2f2f2;
 $color-blue:                      #2c39f2;
+$color-dim-gray:                  #666666;
+$color-dim-gray2:                 #707070;
+$color-matterhorn:                #545454;
+$color-dark-gray:                 #a7a7a7;
+$color-pigment-green:             #009933;
+$color-orange-peel:               #ff9900;
+$color-gainsboro:                 #e0e0e0;
+
 
 // Gradient
 
@@ -26,16 +34,35 @@ $font-family--:                     "", "Arial", sans-serif;
 // Animation
 //---------------------------------
 
-$default-transition-settings:       0.3s ease;
-$modal-transition-settings:         0.6s cubic-bezier(0.55, 0, 0.1, 1);
+$default-easing:                 ease;
+$default-timing:                 0.3s;
+$default-transition-settings:    $default-timing $default-easing;
+$modal-transition-settings:      0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
 
 // Viewports
 //---------------------------------
 
 $viewport--sm:                      320px;
 $viewport--md:                      768px;
-$viewport--lg:                      1024px;
-$viewport--xl:                      1440px;
+$viewport--lg:                      1000px;
+$viewport--xl:                      1250px;
 $viewport--xxl:                     1920px;
 
 // Retina

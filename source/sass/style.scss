@@ -9,7 +9,7 @@
 
 @import "variables";
 @import "mixins";
-@import "global/fonts";
+// @import "global/fonts";
 @import "global/reboot";
 @import "global/utils";
 @import "global/container";
@@ -17,9 +17,11 @@
 // Blocks
 //---------------------------------
 
-@import "blocks/header";
-@import "blocks/footer";
+// @import "blocks/header";
+// @import "blocks/footer";
 @import "blocks/modal";
+@import "blocks/products.scss";
+@import "blocks/product-card.scss";
 
 
 // используйте это для отключения ховеров на тач устройствах

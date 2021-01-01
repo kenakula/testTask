@@ -110,7 +110,7 @@ const copy = () => {
     'source/data/**',
     'source/file/**',
     'source/*.php',
-    'source/video/**', // учтите, что иногда git искажает видеофайлы, некоторые шрифты, pdf и gif - проверяйте и если обнаруживаете баги - скидывайте тестировщику такие файлы напрямую
+    'source/video/**',
     'source/downloads/**',
   ], {
     base: 'source',
@@ -128,7 +128,6 @@ const start = gulp.series(build, syncserver);
 
 // Optional tasks
 //---------------------------------
-// Вызывайте через 'npm run taskName'
 
 const createWebp = () => {
   return gulp.src('source/img/**/*.{png,jpg}')
