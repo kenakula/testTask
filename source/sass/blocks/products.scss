@@ -4,4 +4,8 @@
 
 .products__list {
   @include list-reset;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

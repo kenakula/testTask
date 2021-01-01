@@ -69,15 +69,35 @@
   cursor: pointer;
 }
 
-@mixin font($size, $height) {
-  font-size: $size;
-  line-height: $height;
+@mixin font($font-size, $line-height) {
+  font-size: rem($font-size);
+  line-height: rem($line-height);
 }
 
 @mixin transition($property, $duration: $default-timing, $easing: $default-easing) {
   transition-property: $property;
   transition-duration: $duration;
   transition-timing-function: $easing;
+}
+
+@mixin interactive-opacity {
+  @include transition;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: $hover-opacity;
+  }
+
+  &:active {
+    opacity: $active-opacity;
+  }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  display: $display;
+  position: $pos;
 }
 
 // placeholder
