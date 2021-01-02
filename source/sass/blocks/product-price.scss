@@ -31,6 +31,10 @@
     margin-right: 10px;
     padding-bottom: 4px;
     font-weight: 700;
+
+    @include viewport--md {
+      font-size: 28px;
+    }
   }
 
   svg {
@@ -42,10 +46,18 @@
   &--retail {
     dd {
       color: $color-dark-gray;
+
+      @include viewport--md {
+        font-size: 26px;
+      }
     }
 
     svg {
       fill: $color-dark-gray;
+    }
+
+    @include viewport--md {
+      margin-bottom: 20px;
     }
   }
 }
@@ -57,6 +69,10 @@
   margin-bottom: 5px;
   color: $color-nobel;
   text-align: right;
+
+  @include viewport--md {
+    display: none;
+  }
 }
 
 .product-price__switch {
@@ -97,6 +113,13 @@
 
       &::before {
         display: none;
+      }
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover::before,
+      &:focus::before {
+        border-color: initial;
       }
     }
   }

@@ -1,0 +1,69 @@
+.stepper {
+  display: flex;
+
+  input[type="number"] {
+    @include font(13, 17);
+
+    color: $color-night-rider;
+    width: 40px;
+    border: 1px solid $color-dark-gray;
+    border-right: none;
+    text-align: center;
+    outline: none;
+  }
+}
+
+.stepper__arrows {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepper__button {
+  @include button-reset;
+  @include transition(background);
+
+  position: relative;
+  flex-grow: 1;
+  width: 25px;
+  border: 1px solid $color-dark-gray;
+  outline: none;
+
+  &::before {
+    @include pseudo;
+
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+  }
+
+  &:first-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: $color-dim-gray;
+
+    svg {
+      fill: $color-white;
+    }
+  }
+
+  &--up {
+    svg {
+      transform: rotate(180deg);
+    }
+
+    &::before {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    fill: $color-night-rider;
+  }
+}

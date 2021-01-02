@@ -2,7 +2,9 @@
   <div class="product-card__content">
     <!-- инфо продукта -->
     <div class="product-card__img-wrap">
-      <img src="img/content/product-img.jpg" srcset="img/content/product-img@2x.jpg" width="220" height="220" alt="изображение товара">
+      <a href="#">
+        <img src="img/content/product-img.jpg" srcset="img/content/product-img@2x.jpg" width="220" height="220" alt="изображение товара">
+      </a>
     </div>
     <div class="product-card__description">
       <div class="product-card__label">
@@ -11,7 +13,9 @@
       </div>
       <div class="product-card__info">
         <h3 class="product-card__title">
-          Ламинат 31 кл Kronospan Kronofix Афцелия Малайская 2,47 м.кв. 7 мм
+          <a href="#">
+            Ламинат 31 кл Kronospan Kronofix Афцелия Малайская 2,47 м.кв. 7 мм
+          </a>
         </h3>
         <div class="product-card__useful">
           <p>Могут понадобиться:</p>
@@ -59,17 +63,43 @@
     <!-- в корзину -->
 
     <form action="#" method="POST" class="product-card__form add-to-cart">
-      <div class="add-to-cart__amount">
-        <input type="number" step="1" min="1" id="count147268">
-        <label class="visually-hidden" for="count147268" class="add-to-cart__tooltip">
-          количество упаковок
-        </label>
+      <div class="add-to-cart__stepper">
+        <div class="stepper">
+          <input type="number" step="1" min="1" value="1" id="count147268">
+          <label class="visually-hidden" for="count147268" class="add-to-cart__tooltip">
+            количество упаковок
+          </label>
+          <div class="stepper__arrows">
+            <button class="stepper__button stepper__button--up" aria-label="Увеличить количество">
+              @@include("source/html/base/icon.html", {
+                "name": "icon-arrow-down",
+                "width": "10",
+                "height": "10",
+              })
+            </button>
+            <button class="stepper__button stepper__button--down" aria-label="Уменьшить количество">
+              @@include("source/html/base/icon.html", {
+                "name": "icon-arrow-down",
+                "width": "10",
+                "height": "10",
+              })
+            </button>
+          </div>
+        </div>
         <div class="add-to-cart__tooltip">
           <span>Продается упаковками:</span>
           <span>1 упак. = 2.47 м. кв.</span>
+          <span class="tooltip__icon">i</span>
         </div>
       </div>
-      <button type="submit">В корзину</button>
+      <button type="submit">
+        @@include("source/html/base/icon.html", {
+          "name": "icon-cart",
+          "width": "20",
+          "height": "20",
+        })
+        <span>В корзину</span>
+      </button>
     </form>
   </div>
 </li>

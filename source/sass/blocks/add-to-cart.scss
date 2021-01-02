@@ -1,3 +1,98 @@
 .add-to-cart {
+  position: relative;
   display: flex;
+
+  button[type="submit"] {
+    @include button-reset;
+    @include font(14, 17);
+    @include transition("background, opacity");
+
+    position: relative;
+    padding-left: 20px;
+    min-width: 148px;
+    min-height: 40px;
+    border: 1px solid $color-transparent;
+    background-color: $color-orange-peel;
+    color: $color-white;
+    text-transform: uppercase;
+    outline: none;
+
+    svg {
+      position: absolute;
+      left: 13px;
+      top: 10px;
+      fill: $color-white;
+    }
+
+    &:hover {
+      background-color: $color-night-rider;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-orange-peel;
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.add-to-cart__stepper {
+  display: flex;
+  margin-right: 5px;
+}
+
+.add-to-cart__tooltip {
+  @include font(13, 15);
+
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px 5px 40px;
+  width: 218px;
+  min-height: 44px;
+  border: 1px solid $color-dark-gray;
+  background-color: $color-white;
+
+  &::before {
+    @include pseudo;
+
+    bottom: -8px;
+    left: 12px;
+    border-top: 8px solid $color-grey-light;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+  }
+
+  &::after {
+    @include pseudo;
+
+    bottom: -6px;
+    left: 13px;
+    border-top: 7px solid $color-white;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+  }
+
+  @include viewport--md {
+    display: none;
+  }
+}
+
+.tooltip__icon {
+  position: absolute;
+  left: 12px;
+  top: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: $color-orange-peel;
+  color: $color-white;
+  text-align: center;
 }
