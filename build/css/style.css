@@ -631,6 +631,19 @@ button,
     visibility: visible;
     opacity: 1;
     pointer-events: auto; }
+  .modal--success .modal__description {
+    font-size: 1.5rem;
+    line-height: 2.1875rem;
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-align: center; }
+  .modal--success .modal__buttons-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
 
 .products {
   padding: 30px 0; }
@@ -651,15 +664,10 @@ button,
           align-items: center; }
   @media (max-width: 999px) {
     .products__list {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-      -webkit-box-align: initial;
-          -ms-flex-align: initial;
-              align-items: initial; } }
+      display: -ms-grid;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      justify-items: center; } }
 
 .product-card {
   position: relative;
@@ -674,13 +682,10 @@ button,
       max-width: 742px; } }
   @media (max-width: 999px) {
     .product-card {
-      margin-right: 12.14%;
       padding-top: 32px;
       padding-bottom: 20px;
       max-width: none;
-      width: 25.236%; }
-      .product-card:last-child, .product-card:nth-child(3n) {
-        margin-right: 0; } }
+      width: 240px; } }
 
 .product-card__content {
   display: -webkit-box;
@@ -719,9 +724,10 @@ button,
       opacity: 0.7; }
     .product-card__img-wrap a:active {
       opacity: 0.5; }
-    @media (hover: hover), screen and (min-width: 0\0) {
-      .product-card__img-wrap a:hover, .product-card__img-wrap a:focus {
-        opacity: initial; } }
+
+@media (max-width: 767px) and (hover: hover), screen and (max-width: 767px) and (min-width: 0\0) {
+  .product-card__img-wrap a:hover, .product-card__img-wrap a:focus {
+    opacity: initial; } }
   .product-card__img-wrap img {
     position: absolute;
     left: 0;
@@ -799,9 +805,10 @@ button,
   @media (max-width: 1249px) {
     .product-card__availability {
       line-height: 14px; } }
-  @media (hover: hover), screen and (min-width: 0\0) {
-    .product-card__availability:hover, .product-card__availability:focus {
-      border-color: #009933; } }
+
+@media (max-width: 767px) and (hover: hover), screen and (max-width: 767px) and (min-width: 0\0) {
+  .product-card__availability:hover, .product-card__availability:focus {
+    border-color: #009933; } }
 
 .product-card__info {
   max-width: 490px; }
@@ -824,9 +831,10 @@ button,
       opacity: 0.7; }
     .product-card__title a:active {
       opacity: 0.5; }
-    @media (hover: hover), screen and (min-width: 0\0) {
-      .product-card__title a:hover, .product-card__title a:focus {
-        opacity: initial; } }
+
+@media (max-width: 767px) and (hover: hover), screen and (max-width: 767px) and (min-width: 0\0) {
+  .product-card__title a:hover, .product-card__title a:focus {
+    opacity: initial; } }
   @media (max-width: 1249px) {
     .product-card__title {
       padding-right: 35px;
@@ -955,7 +963,8 @@ button,
     position: relative;
     margin-right: 10px;
     padding: 3px 5px;
-    color: #707070; }
+    color: #707070;
+    outline: none; }
     .product-price__switch button::before {
       content: "";
       display: block;
@@ -980,9 +989,10 @@ button,
       background-color: #000000; }
       .product-price__switch button.active::before {
         display: none; }
-    @media (hover: hover), screen and (min-width: 0\0) {
-      .product-price__switch button:hover::before, .product-price__switch button:focus::before {
-        border-color: initial; } }
+
+@media (max-width: 767px) and (hover: hover), screen and (max-width: 767px) and (min-width: 0\0) {
+  .product-price__switch button:hover::before, .product-price__switch button:focus::before {
+    border-color: initial; } }
 
 .add-to-cart {
   position: relative;
@@ -1018,11 +1028,12 @@ button,
       fill: #ffffff; }
     .add-to-cart button[type="submit"]:hover {
       background-color: #333333; }
-    @media (hover: hover), screen and (min-width: 0\0) {
-      .add-to-cart button[type="submit"]:hover, .add-to-cart button[type="submit"]:focus {
-        background-color: #ff9900; }
-      .add-to-cart button[type="submit"]:active {
-        opacity: 0.8; } }
+
+@media (max-width: 767px) and (hover: hover), screen and (max-width: 767px) and (min-width: 0\0) {
+  .add-to-cart button[type="submit"]:hover, .add-to-cart button[type="submit"]:focus {
+    background-color: #ff9900; }
+  .add-to-cart button[type="submit"]:active {
+    opacity: 0.8; } }
 
 .add-to-cart__stepper {
   display: -webkit-box;
@@ -1147,6 +1158,66 @@ button,
     left: 7px;
     top: 5px;
     fill: #333333; }
+
+.button {
+  padding: 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  -webkit-transition-property: "background, opacity";
+  transition-property: "background, opacity";
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px 15px;
+  min-width: 148px;
+  min-height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-color: #ff9900;
+  color: #ffffff;
+  text-transform: uppercase;
+  outline: none; }
+  .button:hover {
+    background-color: #333333; }
+
+@media (max-width: 767px) and (hover: hover), screen and (max-width: 767px) and (min-width: 0\0) {
+  .button:hover, .button:focus {
+    background-color: #ff9900; }
+  .button:active {
+    opacity: 0.8; } }
+  .button--bordered {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #333333;
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    font-weight: 600; }
+    .button--bordered:hover {
+      opacity: 0.7; }
+    .button--bordered:active {
+      opacity: 0.5; }
+    .button--bordered:hover {
+      background-color: rgba(255, 255, 255, 0); }
+
+@media (max-width: 767px) and (hover: hover), screen and (max-width: 767px) and (min-width: 0\0) {
+  .button--bordered:hover, .button--bordered:focus {
+    opacity: 1; }
+  .button--bordered:active {
+    opacity: 0.8; } }
 
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,

@@ -28,14 +28,16 @@
       background-color: $color-night-rider;
     }
 
-    @media (hover: hover), screen and (min-width: 0\0) {
-      &:hover,
-      &:focus {
-        background-color: $color-orange-peel;
-      }
+    @include viewport--sm {
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+          background-color: $color-orange-peel;
+        }
 
-      &:active {
-        opacity: 0.8;
+        &:active {
+          opacity: 0.8;
+        }
       }
     }
   }

@@ -112,6 +112,7 @@ const copy = () => {
     'source/*.php',
     'source/video/**',
     'source/downloads/**',
+    'source/data/products.json',
   ], {
     base: 'source',
   })

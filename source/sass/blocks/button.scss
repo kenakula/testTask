@@ -1,0 +1,61 @@
+.button {
+  @include button-reset;
+  @include font(14, 17);
+  @include transition("background, opacity");
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  min-width: 148px;
+  min-height: 40px;
+  border: 1px solid $color-transparent;
+  background-color: $color-orange-peel;
+  color: $color-white;
+  text-transform: uppercase;
+  outline: none;
+
+  &:hover {
+    background-color: $color-night-rider;
+  }
+
+  @include viewport--sm {
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-orange-peel;
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &--bordered {
+    @include interactive-opacity;
+
+    border: 2px solid $color-night-rider;
+    background-color: $color-transparent;
+    color: $color-black;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $color-transparent;
+    }
+
+    @include viewport--sm {
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+          opacity: 1;
+        }
+
+        &:active {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

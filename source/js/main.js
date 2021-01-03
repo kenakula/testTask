@@ -3,6 +3,10 @@ import {iosVhFix} from './utils/ios-vh-fix';
 
 import {initModals} from './modules/init-modals';
 
+import {stepper} from './modules/stepper';
+import {buttonSwitch} from './modules/card-price-switch';
+import './modules/products';
+
 // Utils
 // ---------------------------------
 
@@ -13,3 +17,5 @@ iosVhFix();
 // ---------------------------------
 
 initModals();
+stepper();
+buttonSwitch();

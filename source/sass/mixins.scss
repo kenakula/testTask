@@ -94,15 +94,6 @@
   }
 }
 
-@mixin no-hover-mobile($property, $value) {
-  @media (hover: hover), screen and (min-width: 0\0) {
-    &:hover,
-    &:focus {
-      $property: $value;
-    }
-  }
-}
-
 @mixin pseudo($display: block, $pos: absolute, $content: "") {
   content: $content;
   display: $display;

@@ -10,8 +10,8 @@
   align-items: center;
 
   @include viewport--md {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: initial;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    justify-items: center;
   }
 }

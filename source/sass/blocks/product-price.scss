@@ -88,6 +88,7 @@
     margin-right: 10px;
     padding: 3px 5px;
     color: $color-dim-gray2;
+    outline: none;
 
     &::before {
       @include pseudo;
@@ -116,10 +117,12 @@
       }
     }
 
-    @media (hover: hover), screen and (min-width: 0\0) {
-      &:hover::before,
-      &:focus::before {
-        border-color: initial;
+    @include viewport--sm {
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover::before,
+        &:focus::before {
+          border-color: initial;
+        }
       }
     }
   }

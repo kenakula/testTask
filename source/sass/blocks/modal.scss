@@ -104,4 +104,20 @@
     opacity: 1;
     pointer-events: auto;
   }
+
+  &--success {
+    .modal__description {
+      @include font(24, 35);
+
+      margin: 0;
+      margin-bottom: 40px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .modal__buttons-wrapper {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
 }
