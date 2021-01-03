@@ -2,7 +2,7 @@ import {setupModal} from '../utils/modal';
 import {setCard, renderCard, productsList, modalSuccess} from './products';
 import {stepper} from './stepper';
 
-const DATA_URL = 'https://github.com/kenakula/testTask/build/data/products.json';
+const DATA_URL = 'https://kenakula.github.io/testTask/build/data/products.json';
 
 const errorHandler = (error) => {
   const pageContainer = document.querySelector('.products');
