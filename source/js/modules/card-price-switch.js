@@ -28,6 +28,12 @@ const buttonSwitch = () => {
   });
 };
 
+const getPrice = (elem, unit) => {
+  const value = elem.dataset[unit];
+
+  return Number(value).toFixed(2);
+};
+
 const setPrices = (card) => {
   const activeUnitButton = card.querySelector('.product-price__switch .active');
   const activeUnitValue = activeUnitButton.dataset.unit;
@@ -35,8 +41,11 @@ const setPrices = (card) => {
   const goldPriceContainer = card.querySelector('.product-price__price--gold dd');
   const retailPriceContainer = card.querySelector('.product-price__price--retail dd');
 
-  goldPriceContainer.textContent = goldPriceContainer.dataset[activeUnitValue];
-  retailPriceContainer.textContent = retailPriceContainer.dataset[activeUnitValue];
+  const goldPrice = getPrice(goldPriceContainer, activeUnitValue);
+  const retailPrice = getPrice(retailPriceContainer, activeUnitValue);
+
+  goldPriceContainer.textContent = goldPrice;
+  retailPriceContainer.textContent = retailPrice;
 };
 
 export {buttonSwitch, switchButtons, setPrices};

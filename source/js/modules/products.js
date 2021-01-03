@@ -1,11 +1,12 @@
 import {switchButtons, setPrices} from './card-price-switch';
 
-const DATA_URL = '../data/products.json';
 const IMAGE_MOD = '_220x220_1';
 const ERROR_MESSAGE = 'Проблемы с соединением, проверьте подключение';
 
 const productsList = document.querySelector('.products__list');
 const cardTemplate = document.querySelector('#card').content.querySelector('.product-card');
+
+const modalSuccess = document.querySelector('.modal--success');
 
 const setCardImg = (card, url) => {
   const cardImg = card.querySelector('.product-card__img-wrap img');
@@ -55,14 +56,24 @@ const setProductId = (card, id) => {
   buyButton.dataset.productId = id;
 };
 
-const setPriceSwitchButtons = (card, hasAlt) => {
+const setPriceSwitchButtons = (card, hasAlt, unitFull, unitFullAlt) => {
   const buttonsContainer = card.querySelector('.product-price__switch');
+  const defaultButton = card.querySelector('.js-default-unit');
+  const altButton = card.querySelector('.js-alt-unit');
+
+  defaultButton.dataset.unitName = unitFull;
+  altButton.dataset.unitName = unitFullAlt;
 
   if (hasAlt) {
     const disabledButton = buttonsContainer.querySelector('.disabled');
     disabledButton.classList.remove('disabled');
     switchButtons(buttonsContainer, disabledButton);
   }
+};
+
+const setBonusPrice = (card, bonus) => {
+  const bonusPriceElem = card.querySelector('.product-price__points span');
+  bonusPriceElem.textContent = bonus;
 };
 
 const setPrice = (card, gold, goldAlt, retail, retailAlt) => {
@@ -77,17 +88,28 @@ const setPrice = (card, gold, goldAlt, retail, retailAlt) => {
   setPrices(card);
 };
 
+const setAltUnitRatio = (card, unit, unitRatio, altUnit, altRatio) => {
+  const container = card.querySelector('.js-ratio');
+  const string = `${unitRatio} ${unit} = ${(unitRatio / altRatio).toFixed(3)} ${altUnit}`;
+
+  container.textContent = string;
+};
+
 const setCard = (dataObj) => {
   const cardElement = cardTemplate.cloneNode(true);
   const {priceGold, priceGoldAlt, priceRetail, priceRetailAlt} = dataObj;
+
+  cardElement.dataset.modified = dataObj.modified;
 
   setCardImg(cardElement, dataObj.primaryImageUrl);
   setCardCode(cardElement, dataObj.code);
   setCardTitle(cardElement, dataObj.title, dataObj.description);
   setAssociatedProducts(cardElement, dataObj.assocProducts);
   setProductId(cardElement, dataObj.productId);
-  setPriceSwitchButtons(cardElement, dataObj.hasAlternateUnit);
+  setPriceSwitchButtons(cardElement, dataObj.hasAlternateUnit, dataObj.unitFull, dataObj.unitFullAlt);
   setPrice(cardElement, priceGold, priceGoldAlt, priceRetail, priceRetailAlt);
+  setBonusPrice(cardElement, dataObj.bonusAmount);
+  setAltUnitRatio(cardElement, dataObj.unit, dataObj.unitRatio, dataObj.unitAlt, dataObj.unitRatioAlt);
 
   return cardElement;
 };
@@ -104,16 +126,4 @@ const errorHandler = (error) => {
   pageContainer.appendChild(elem);
 };
 
-fetch(DATA_URL)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      data.forEach((obj) => {
-        const card = setCard(obj);
-        renderCard(card, productsList);
-      });
-    })
-    .catch((error) => {
-      errorHandler(error);
-    });
+export {setCard, renderCard, productsList, modalSuccess, errorHandler};
