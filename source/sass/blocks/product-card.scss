@@ -72,6 +72,11 @@
     height: 100%;
   }
 
+  &:hover + .product-card__details {
+    display: block;
+    opacity: 1;
+  }
+
   @include viewport--lg {
     margin-right: 13px;
     padding-bottom: percentage(160 / 720);
@@ -80,6 +85,32 @@
   @include viewport--md {
     margin: 0 auto 30px;
     padding-bottom: percentage(160 / 220);
+
+    &:hover + .product-card__details {
+      display: none;
+      opacity: 0;
+    }
+  }
+}
+
+.product-card__details {
+  z-index: 1;
+  position: absolute;
+  left: 30%;
+  top: 20px;
+  display: none;
+  opacity: 0;
+  padding: 30px 20px;
+  width: 50%;
+  background-color: $color-white;
+  box-shadow: 0 0 20px 5px rgba($color: $color-night-rider, $alpha: 0.3);
+  animation: fadeInFromNone $default-transition-settings;
+  color: $color-dim-gray;
+
+  p {
+    @include font(14, 20);
+
+    margin: 0;
   }
 }
 

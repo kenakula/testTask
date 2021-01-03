@@ -12,10 +12,25 @@
   @include viewport--md {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    justify-items: center;
-    align-items: stretch;
     column-gap: 10px;
     row-gap: 20px;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      grid-template-columns: repeat(3, fr);
+
+      @include viewport--sm {
+        grid-template-columns: repeat(2, fr);
+      }
+
+      @media (max-width: 550px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    & > * {
+      justify-self: center;
+      align-self: stretch;
+    }
   }
 }
 

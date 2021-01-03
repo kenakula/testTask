@@ -50,9 +50,11 @@
         &:hover,
         &:focus {
           opacity: 1;
+          background-color: $color-transparent;
         }
 
         &:active {
+          background-color: $color-transparent;
           opacity: 0.8;
         }
       }

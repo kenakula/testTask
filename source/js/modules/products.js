@@ -25,10 +25,9 @@ const setCardCode = (card, code) => {
   codeElem.textContent = code;
 };
 
-const setCardTitle = (card, title, desc) => {
+const setCardTitle = (card, title) => {
   const titleElem = card.querySelector('.product-card__title a');
   titleElem.textContent = title;
-  titleElem.title = desc;
 };
 
 const setAssociatedProducts = (card, products) => {
@@ -94,6 +93,12 @@ const setAltUnitRatio = (card, unit, unitRatio, altUnit, altRatio) => {
   container.textContent = string;
 };
 
+const setCardDetails = (card, details) => {
+  const container = card.querySelector('.product-card__details p');
+
+  container.textContent = details;
+};
+
 const setCard = (dataObj) => {
   const cardElement = cardTemplate.cloneNode(true);
   const {priceGold, priceGoldAlt, priceRetail, priceRetailAlt} = dataObj;
@@ -102,13 +107,14 @@ const setCard = (dataObj) => {
 
   setCardImg(cardElement, dataObj.primaryImageUrl);
   setCardCode(cardElement, dataObj.code);
-  setCardTitle(cardElement, dataObj.title, dataObj.description);
+  setCardTitle(cardElement, dataObj.title);
   setAssociatedProducts(cardElement, dataObj.assocProducts);
   setProductId(cardElement, dataObj.productId);
   setPriceSwitchButtons(cardElement, dataObj.hasAlternateUnit, dataObj.unitFull, dataObj.unitFullAlt);
   setPrice(cardElement, priceGold, priceGoldAlt, priceRetail, priceRetailAlt);
   setBonusPrice(cardElement, dataObj.bonusAmount);
   setAltUnitRatio(cardElement, dataObj.unit, dataObj.unitRatio, dataObj.unitAlt, dataObj.unitRatioAlt);
+  setCardDetails(cardElement, dataObj.description);
 
   return cardElement;
 };

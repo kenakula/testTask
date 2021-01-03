@@ -1,5 +1,6 @@
 import {setupModal} from '../utils/modal';
 import {setCard, renderCard, productsList, modalSuccess} from './products';
+import {stepper} from './stepper';
 
 const DATA_URL = '../data/products.json';
 
@@ -29,4 +30,5 @@ fetch(DATA_URL)
       if (modalSuccess && modalSuccessBtns.length) {
         setupModal(modalSuccess, false, modalSuccessBtns);
       }
+      stepper();
     });

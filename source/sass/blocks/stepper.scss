@@ -12,7 +12,8 @@
     outline: none;
 
     &:focus + .add-to-cart__tooltip {
-      display: flex;
+      display: block;
+      opacity: 1;
     }
   }
 }
