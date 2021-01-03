@@ -111,10 +111,16 @@
     &.active {
       color: $color-white;
       background-color: $color-black;
+      pointer-events: none;
 
       &::before {
         display: none;
       }
+    }
+
+    &.disabled {
+      opacity: 0.3;
+      pointer-events: none;
     }
 
     @include viewport--sm {

@@ -857,6 +857,7 @@ button,
   .product-card__useful a {
     font-size: 0.8125rem;
     line-height: 1rem;
+    margin-right: 2px;
     color: #666666; }
     .product-card__useful a:hover {
       text-decoration: underline; }
@@ -986,9 +987,13 @@ button,
       border-color: rgba(255, 255, 255, 0); }
     .product-price__switch button.active {
       color: #ffffff;
-      background-color: #000000; }
+      background-color: #000000;
+      pointer-events: none; }
       .product-price__switch button.active::before {
         display: none; }
+    .product-price__switch button.disabled {
+      opacity: 0.3;
+      pointer-events: none; }
 
 @media (max-width: 767px) and (hover: hover), screen and (max-width: 767px) and (min-width: 0\0) {
   .product-price__switch button:hover::before, .product-price__switch button:focus::before {

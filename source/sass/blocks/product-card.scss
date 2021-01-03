@@ -208,6 +208,7 @@
   a {
     @include font(13, 16);
 
+    margin-right: 2px;
     color: $color-dim-gray;
 
     &:hover {

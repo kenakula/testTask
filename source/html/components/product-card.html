@@ -3,7 +3,7 @@
     <!-- инфо продукта -->
     <div class="product-card__img-wrap">
       <a href="#">
-        <img src="img/content/product-img.jpg" srcset="img/content/product-img@2x.jpg" width="220" height="220" alt="изображение товара">
+        <img src="img/content/product-img.jpg" width="160" height="160" alt="изображение товара">
       </a>
     </div>
     <div class="product-card__description">
@@ -12,26 +12,20 @@
         <a class="product-card__availability" href="#">Наличие</a>
       </div>
       <div class="product-card__info">
-        <h3 class="product-card__title">
+        <h3 class="product-card__title" title="hello">
           <a href="#">
             Ламинат 31 кл Kronospan Kronofix Афцелия Малайская 2,47 м.кв. 7 мм
           </a>
         </h3>
         <div class="product-card__useful">
           <p>Могут понадобиться:</p>
-          <a href="#">подложка,</a>
-          <a href="#">плинтус натуральный,</a>
-          <a href="#">рулетка,</a>
-          <a href="#">набор для укладки ламината,</a>
-          <a href="#">ножовка по ламинату,</a>
-          <a href="#">гель для стыков ламината Clic Protect.</a>
         </div>
       </div>
       <div class="product-card__prices product-price">
         <div class="product-price__price product-price__price--gold">
           <dl>
             <dt>По карте клуба</dt>
-            <dd>375,71<span class="visually-hidden">рублей</span></dd>
+            <dd>375,71</dd>
           </dl>
           @@include("source/html/base/icon.html", {
             "name": "icon-rouble",
@@ -43,7 +37,7 @@
         <div class="product-price__price product-price__price--retail">
           <dl>
             <dt class="visually-hidden">Обычная цена</dt>
-            <dd>391,09<span class="visually-hidden">рублей</span></dd>
+            <dd>391,09</dd>
           </dl>
           @@include("source/html/base/icon.html", {
             "name": "icon-rouble-gray",
@@ -53,8 +47,8 @@
         </div>
         <p class="product-price__points">Можно купить за <span>231,75</span> балла</p>
         <div class="product-price__switch">
-          <button class="active" type="button">За м. кв.</button>
-          <button type="button">За упаковку</button>
+          <button class="js-alt-unit disabled" type="button" data-unit="alt">За м. кв.</button>
+          <button type="button" class="active js-default-unit" data-unit="default">За упаковку</button>
         </div>
       </div>
     </div>
@@ -92,7 +86,7 @@
           <span class="tooltip__icon">i</span>
         </div>
       </div>
-      <button type="submit" data-modal="success">
+      <button type="submit" data-modal="success" data-product-id="1234">
         @@include("source/html/base/icon.html", {
           "name": "icon-cart",
           "width": "20",
