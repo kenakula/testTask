@@ -10,6 +10,10 @@
     border-right: none;
     text-align: center;
     outline: none;
+
+    &:focus + .add-to-cart__tooltip {
+      display: flex;
+    }
   }
 }
 

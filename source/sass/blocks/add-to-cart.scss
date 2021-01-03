@@ -61,6 +61,7 @@
   min-height: 44px;
   border: 1px solid $color-dark-gray;
   background-color: $color-white;
+  animation: fadeInFromNone $default-transition-settings;
 
   &::before {
     @include pseudo;
@@ -87,7 +88,9 @@
   }
 }
 
-.tooltip__icon {
+.add-to-cart__tooltip-icon {
+  @include font(12, 16);
+
   position: absolute;
   left: 12px;
   top: calc(50% - 8px);

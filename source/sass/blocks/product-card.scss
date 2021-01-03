@@ -12,6 +12,10 @@
   }
 
   @include viewport--md {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0;
     padding-top: 32px;
     padding-bottom: 20px;
     max-width: none;
@@ -29,6 +33,7 @@
 
   @include viewport--md {
     flex-direction: column;
+    flex-grow: 1;
   }
 }
 
@@ -86,6 +91,7 @@
 
   @include viewport--lg {
     padding-top: 0;
+    min-height: 170px;
   }
 
   @include viewport--md {
@@ -188,7 +194,7 @@
 
   @include viewport--md {
     margin-bottom: 20px;
-    padding-right: 10px;
+    padding-right: 0;
     line-height: 20px;
   }
 }
@@ -226,6 +232,12 @@
 
   @include viewport--md {
     display: none;
+  }
+}
+
+.product-card__prices {
+  @include viewport--md {
+    margin-top: auto;
   }
 }
 

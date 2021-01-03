@@ -1,5 +1,9 @@
 .product-price {
   padding-left: 30px;
+
+  @include viewport--md {
+    padding-left: 0;
+  }
 }
 
 .product-price__price {
@@ -31,10 +35,6 @@
     margin-right: 10px;
     padding-bottom: 4px;
     font-weight: 700;
-
-    @include viewport--md {
-      font-size: 28px;
-    }
   }
 
   svg {
@@ -46,10 +46,6 @@
   &--retail {
     dd {
       color: $color-dark-gray;
-
-      @include viewport--md {
-        font-size: 26px;
-      }
     }
 
     svg {
