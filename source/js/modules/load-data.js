@@ -1,10 +1,23 @@
 import {setupModal} from '../utils/modal';
-import {setCard, renderCard, productsList, modalSuccess, errorHandler} from './products';
+import {setCard, renderCard, productsList, modalSuccess} from './products';
 
 const DATA_URL = '../data/products.json';
 
+const errorHandler = (error) => {
+  const pageContainer = document.querySelector('.products');
+  const elem = document.createElement('p');
+  elem.setAttribute('class', 'products__error');
+  elem.textContent = `Ошибка: ${error}`;
+
+  pageContainer.appendChild(elem);
+};
+
 fetch(DATA_URL)
     .then((response) => {
+      if (!response.ok) {
+        errorHandler(response.statusText);
+        throw Error(response.statusText);
+      }
       return response.json();
     })
     .then((data) => {
@@ -16,7 +29,4 @@ fetch(DATA_URL)
       if (modalSuccess && modalSuccessBtns.length) {
         setupModal(modalSuccess, false, modalSuccessBtns);
       }
-    })
-    .catch((error) => {
-      errorHandler(error);
     });

@@ -18,3 +18,21 @@
     row-gap: 20px;
   }
 }
+
+.products__error {
+  @include font(18, 25);
+
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 30%;
+  text-align: center;
+  border: 1px solid $color-dim-gray;
+  font-weight: 600;
+  color: $color-red;
+
+  @include viewport--md {
+    @include font(14, 20);
+
+    max-width: 100%;
+  }
+}

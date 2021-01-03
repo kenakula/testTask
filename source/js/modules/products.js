@@ -1,7 +1,6 @@
 import {switchButtons, setPrices} from './card-price-switch';
 
 const IMAGE_MOD = '_220x220_1';
-const ERROR_MESSAGE = 'Проблемы с соединением, проверьте подключение';
 
 const productsList = document.querySelector('.products__list');
 const cardTemplate = document.querySelector('#card').content.querySelector('.product-card');
@@ -118,12 +117,4 @@ const renderCard = (elem, list) => {
   list.insertAdjacentElement('beforeend', elem);
 };
 
-const errorHandler = (error) => {
-  const pageContainer = document.querySelector('.products');
-  const elem = document.createElement('p');
-  elem.textContent = `${ERROR_MESSAGE}\n${error}`;
-
-  pageContainer.appendChild(elem);
-};
-
-export {setCard, renderCard, productsList, modalSuccess, errorHandler};
+export {setCard, renderCard, productsList, modalSuccess};

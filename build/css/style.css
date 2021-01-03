@@ -676,6 +676,22 @@ button,
               column-gap: 10px;
       row-gap: 20px; } }
 
+.products__error {
+  font-size: 1.125rem;
+  line-height: 1.5625rem;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 30%;
+  text-align: center;
+  border: 1px solid #666666;
+  font-weight: 600;
+  color: #f74343; }
+  @media (max-width: 999px) {
+    .products__error {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      max-width: 100%; } }
+
 .product-card {
   position: relative;
   margin-bottom: 30px;
