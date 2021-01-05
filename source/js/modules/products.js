@@ -3,7 +3,7 @@ import {switchButtons, setPrices} from './card-price-switch';
 const IMAGE_MOD = '_220x220_1';
 
 const productsList = document.querySelector('.products__list');
-const cardTemplate = document.querySelector('#card').content.querySelector('.product-card');
+const cardTemplate = document.querySelector('#card').querySelector('.product-card');
 
 const modalSuccess = document.querySelector('.modal--success');
 
