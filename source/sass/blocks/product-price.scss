@@ -96,6 +96,11 @@
       height: 1px;
       border-bottom: 1px dotted $color-dim-gray2;
       transform: translateX(calc(-50% - 2px));
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        transform: none;
+        margin-left: -45%;
+      }
     }
 
     &:hover {
