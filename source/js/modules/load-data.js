@@ -3,13 +3,10 @@ import {setCard, renderCard, productsList, modalSuccess} from './products';
 import {stepper} from './stepper';
 
 const DATA_URL = 'https://kenakula.github.io/testTask/build/data/products.json';
-
-// const TIMEOUT_IN_MS = 10000;
 const Method = {
   GET: 'GET',
   POST: 'POST',
 };
-// const RESPONSE_TYPE = 'text';
 const ResponseCode = {
   OK: 200,
   NOT_FOUND: 404,
@@ -48,8 +45,6 @@ const responseHandler = function (xhr, onLoad, onError) {
 
 const createXhr = function (onSuccess, onError) {
   const xhr = new XMLHttpRequest();
-  // xhr.responseType = RESPONSE_TYPE;
-  // xhr.timeout = TIMEOUT_IN_MS;
   responseHandler(xhr, onSuccess, onError);
 
   return xhr;

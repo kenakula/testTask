@@ -20,6 +20,15 @@
     padding-bottom: 20px;
     max-width: none;
     width: 240px;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      margin-bottom: 20px;
+      width: 240px;
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
   }
 }
 
