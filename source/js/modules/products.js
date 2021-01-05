@@ -74,7 +74,7 @@ const setBonusPrice = (card, bonus) => {
   bonusPriceElem.textContent = bonus;
 };
 
-const setPrice = (card, gold, goldAlt, retail, retailAlt) => {
+const setPriceBlock = (card, gold, goldAlt, retail, retailAlt) => {
   const goldPrice = card.querySelector('.product-price__price--gold dd');
   const retailPrice = card.querySelector('.product-price__price--retail dd');
 
@@ -111,7 +111,7 @@ const setCard = (dataObj) => {
   setAssociatedProducts(cardElement, dataObj.assocProducts);
   setProductId(cardElement, dataObj.productId);
   setPriceSwitchButtons(cardElement, dataObj.hasAlternateUnit, dataObj.unitFull, dataObj.unitFullAlt);
-  setPrice(cardElement, priceGold, priceGoldAlt, priceRetail, priceRetailAlt);
+  setPriceBlock(cardElement, priceGold, priceGoldAlt, priceRetail, priceRetailAlt);
   setBonusPrice(cardElement, dataObj.bonusAmount);
   setAltUnitRatio(cardElement, dataObj.unit, dataObj.unitRatio, dataObj.unitAlt, dataObj.unitRatioAlt);
   setCardDetails(cardElement, dataObj.description);

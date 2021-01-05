@@ -104,7 +104,7 @@
       </a>
     </div>
     <div class="product-card__details">
-      <p></p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor dignissimos distinctio rerum illo nam. Sapiente consectetur rem ratione labore natus!</p>
     </div>
     <div class="product-card__description">
       <div class="product-card__label">
@@ -121,34 +121,35 @@
           <p>Могут понадобиться:</p>
         </div>
       </div>
-      <div class="product-card__prices product-price">
-        <div class="product-price__price product-price__price--gold">
-          <dl>
-            <dt>По карте клуба</dt>
-            <dd>375,71</dd>
-          </dl>
-          <svg width="19" height="19" aria-hidden="true">
+      <div class="product-price product-card__prices">
+  <div class="product-price__price product-price__price--gold">
+    <dl>
+      <dt>По карте клуба</dt>
+      <dd>375,71</dd>
+    </dl>
+    <svg width="19" height="19" aria-hidden="true">
   <use href="#icon-rouble"></use>
 </svg>
 
-        </div>
+  </div>
 
-        <div class="product-price__price product-price__price--retail">
-          <dl>
-            <dt class="visually-hidden">Обычная цена</dt>
-            <dd>391,09</dd>
-          </dl>
-          <svg width="19" height="19" aria-hidden="true">
+  <div class="product-price__price product-price__price--retail">
+    <dl>
+      <dt class="visually-hidden">Обычная цена</dt>
+      <dd>391,09</dd>
+    </dl>
+    <svg width="19" height="19" aria-hidden="true">
   <use href="#icon-rouble-gray"></use>
 </svg>
 
-        </div>
-        <p class="product-price__points">Можно купить за <span>231,75</span> балла</p>
-        <div class="product-price__switch">
-          <button class="js-alt-unit disabled" type="button" data-unit="alt">За м. кв.</button>
-          <button type="button" class="active js-default-unit" data-unit="default">За упаковку</button>
-        </div>
-      </div>
+  </div>
+  <p class="product-price__points">Можно купить за <span>231,75</span> балла</p>
+  <div class="product-price__switch">
+    <button class="js-alt-unit disabled" type="button" data-unit="alt">За м. кв.</button>
+    <button type="button" class="active js-default-unit" data-unit="default">За упаковку</button>
+  </div>
+</div>
+
     </div>
   </div>
   <div class="product-card__buy">
@@ -157,30 +158,31 @@
     <form action="#" method="POST" class="product-card__form add-to-cart">
       <div class="add-to-cart__stepper">
         <div class="stepper">
-          <input type="number" step="1" min="1" value="1" id="count147268">
-          <div class="add-to-cart__tooltip">
-            <span>Продается упаковками:</span>
-            <span class="js-ratio">1 упак. = 2.47 м. кв.</span>
-            <span class="add-to-cart__tooltip-icon">i</span>
-          </div>
-          <label class="visually-hidden" for="count147268">
-            количество упаковок
-          </label>
-          <div class="stepper__arrows">
-            <button class="stepper__button stepper__button--up" aria-label="Увеличить количество">
-              <svg width="10" height="10" aria-hidden="true">
+  <input type="number" step="1" min="1" value="1" id="count147268">
+  <div class="add-to-cart__tooltip">
+    <span>Продается упаковками:</span>
+    <span class="js-ratio">1 упак. = 2.47 м. кв.</span>
+    <span class="add-to-cart__tooltip-icon">i</span>
+  </div>
+  <label class="visually-hidden" for="count147268">
+    количество упаковок
+  </label>
+  <div class="stepper__arrows">
+    <button class="stepper__button stepper__button--up" aria-label="Увеличить количество">
+      <svg width="10" height="10" aria-hidden="true">
   <use href="#icon-arrow-down"></use>
 </svg>
 
-            </button>
-            <button class="stepper__button stepper__button--down" aria-label="Уменьшить количество">
-              <svg width="10" height="10" aria-hidden="true">
+    </button>
+    <button class="stepper__button stepper__button--down" aria-label="Уменьшить количество">
+      <svg width="10" height="10" aria-hidden="true">
   <use href="#icon-arrow-down"></use>
 </svg>
 
-            </button>
-          </div>
-        </div>
+    </button>
+  </div>
+</div>
+
       </div>
       <button type="submit" data-modal="success" data-product-id="1234">
         <svg width="20" height="20" aria-hidden="true">
@@ -194,9 +196,6 @@
 </li>
 
     </div>
-    <template id="accosiatedProduct" style="display: none;">
-      <a href="#"></a>
-    </template>
   </div>
 
   <script src="js/vendor.min.js"></script>
