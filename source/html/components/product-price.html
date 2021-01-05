@@ -1,0 +1,30 @@
+<div class="product-price @@if (context.addClass) {product-card__prices}">
+  <div class="product-price__price product-price__price--gold">
+    <dl>
+      <dt>По карте клуба</dt>
+      <dd>375,71</dd>
+    </dl>
+    @@include("source/html/base/icon.html", {
+      "name": "icon-rouble",
+      "width": "19",
+      "height": "19",
+    })
+  </div>
+
+  <div class="product-price__price product-price__price--retail">
+    <dl>
+      <dt class="visually-hidden">Обычная цена</dt>
+      <dd>391,09</dd>
+    </dl>
+    @@include("source/html/base/icon.html", {
+      "name": "icon-rouble-gray",
+      "width": "19",
+      "height": "19",
+    })
+  </div>
+  <p class="product-price__points">Можно купить за <span>231,75</span> балла</p>
+  <div class="product-price__switch">
+    <button class="js-alt-unit disabled" type="button" data-unit="alt">За м. кв.</button>
+    <button type="button" class="active js-default-unit" data-unit="default">За упаковку</button>
+  </div>
+</div>

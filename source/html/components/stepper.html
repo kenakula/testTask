@@ -1,0 +1,27 @@
+<div class="stepper">
+  <input type="number" step="1" min="1" value="1" id="count147268">
+  <div class="add-to-cart__tooltip">
+    <span>Продается упаковками:</span>
+    <span class="js-ratio">1 упак. = 2.47 м. кв.</span>
+    <span class="add-to-cart__tooltip-icon">i</span>
+  </div>
+  <label class="visually-hidden" for="count147268">
+    количество упаковок
+  </label>
+  <div class="stepper__arrows">
+    <button class="stepper__button stepper__button--up" aria-label="Увеличить количество">
+      @@include("source/html/base/icon.html", {
+        "name": "icon-arrow-down",
+        "width": "10",
+        "height": "10",
+      })
+    </button>
+    <button class="stepper__button stepper__button--down" aria-label="Уменьшить количество">
+      @@include("source/html/base/icon.html", {
+        "name": "icon-arrow-down",
+        "width": "10",
+        "height": "10",
+      })
+    </button>
+  </div>
+</div>

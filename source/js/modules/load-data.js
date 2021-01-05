@@ -69,7 +69,6 @@ const errorHandler = (error) => {
 
 const handleSuccess = (data) => {
   const products = JSON.parse(data);
-  console.log('products:', products)
   products.forEach((product) => {
     const card = setCard(product);
     renderCard(card, productsList);

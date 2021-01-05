@@ -108,11 +108,10 @@
         <h1>Компоненты, используемые в вёрстке</h1>
 
         <section>
-          <h2>Название компонента или группы компонентов</h2>
-
-          <p>Класс компонента \ модификаторы</p>
-          <p style="color: red;">При необходимости, подсказки \ предупреждение \ важная информация</p>
-          <div>Компонент</div>
+          <h2>Модальное окно об успешном добавлении в корзину</h2>
+          <div>
+            <button type="button" data-modal="success">Кнопка открытия</button>
+          </div>
         </section>
 
         <!-- Всегда оставляйте коммент ниже, чтобы удобно было копипастить -->
@@ -123,11 +122,35 @@
         </section> -->
       </div>
     </main>
+    <div class="modal modal--preload modal--success    ">
+  <div class="modal__wrapper">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+
+      <p class="modal__description">
+  Товар добавлен в корзину.
+</p>
+<div class="modal__buttons-wrapper">
+  <button class="button button--bordered">Продолжить покупки</button>
+  <a href="#" class="button">Перейти в корзину</a>
+</div>
+
+
+      <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап">
+        <svg width="15" height="15">
+          <use xlink:href="#icon-close"></use>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+</div>
+
 
     
   </div>
 
   <script src="js/vendor.min.js"></script>
-  <script src="js/main.min.js"></script>
+  <!-- <script src="js/main.min.js"></script> -->
 </body>
 </html>
